@@ -1,0 +1,31 @@
+{
+  "name": "challenge_1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "react-dev": "webpack -d --watch",
+    "build": "webpack --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "json-server --watch data/db.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "7": "0.0.1",
+    "babel": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.19.0",
+    "react": "^16.8.6",
+    "react-dev": "0.0.1",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.5"
+  }
+}
