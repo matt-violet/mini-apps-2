@@ -11,6 +11,7 @@ npm install body-parser
 npm install react-dom
 npm install -g json-server
 npm install json-server
+npm install react-paginate --save
 
 
 npm run server
