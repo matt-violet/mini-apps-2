@@ -9,12 +9,13 @@ class Event extends React.Component {
     return (
       <div>
         {this.props.events.map((event) => {
-          return <div key={event.category2}>
+          return <div> 
+            <br/>
+            <div className='event' key={event.category2}>
             <strong>Date: </strong> {event.date}<br/>
             <strong>Place: </strong> {event.category2}<br/>
             <strong>Description: </strong>{event.description}<br/><br/>
-            ----------------------------------------------------------------------------------
-            <br/><br/>
+          </div>
           </div>
         })}
       </div>

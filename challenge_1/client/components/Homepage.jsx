@@ -64,9 +64,10 @@ class Homepage extends React.Component {
       return (
         <div>
           <SearchBar onSubmit={this.onSubmit} onChange={this.onChange} search={this.state.search} /><br/><br/>
+          <div className='paginate'>
           <ReactPaginate 
-            previousLabel={'Previous Events'} 
-            nextLabel={'More Events'} 
+            previousLabel={'<<'} 
+            nextLabel={'>>'} 
             breakLabel={'...'} 
             breakClassName={'break-me'} 
             pageCount={this.state.pageCount} 
@@ -77,6 +78,7 @@ class Homepage extends React.Component {
             subContainerClassName={'pages pagination'} 
             activeClassName={'active'} 
           />
+          </div>
           <Event events={this.state.events} />
         </div>
       )
