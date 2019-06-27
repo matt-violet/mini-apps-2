@@ -17,16 +17,24 @@ class App extends React.Component {
     e.preventDefault()
     this.setState({
       currency: e.target.value
-    },
-    // axios('/currency')
-    // .then((response) => {
-
-    // })
-    )
-  }
+    }
+  )}
 
   search() {
-    console.log('searching ', this.state.currency)
+    axios('/currency', {
+      params: {
+        currency: this.state.currency
+      }
+    })
+    .then((response) => {
+      this.setState({
+        results: response.data.bpi
+      },
+      () => {this.createChart(this.state.results)})
+    })
+    .catch((error) => {
+      console.log('Error getting data: ', error)
+    })  
   }
 
   componentDidMount() {
@@ -82,12 +90,7 @@ class App extends React.Component {
           'rgba(75, 192, 192, 0.2)',
           'rgba(153, 102, 255, 0.2)',
           'rgba(255, 159, 64, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
+          'rgba(255, 99, 132, 0.2)'
         ],
         borderColor: [
           'rgba(255, 99, 132, 1)',
