@@ -9,14 +9,15 @@ class Search extends React.Component {
     return (
       <div>
         Find historical price data for any cryptocurrency: <br/><br/>
-        <select>
-          <option value="usd">USD</option>
-          <option value="jpy">JPY</option>
-          <option value="cny">CNY</option>
-          <option value="eur">EUR</option>
+        <select onChange={this.props.handleDropDown}>
+          <option>USD</option>
+          <option>JPY</option>
+          <option>CNY</option>
+          <option>EUR</option>
         </select>
         <br/>
-        <button>Search</button>
+        <button onClick={this.props.search}>Search</button>
+        <br/><br/>
       </div>
     )
   }
