@@ -29,10 +29,10 @@ class App extends React.Component {
     this.state.pins = null;
   }
 
-  calculateScore(arr) {
+  calculateScore(obj) {
     var total = 0;
-    for (var i = 0; i < arr.length; i++) {
-      total += arr[i];
+    for (var key in obj) {
+      total += obj[key];
     }
     return total;
   }
@@ -44,7 +44,7 @@ class App extends React.Component {
   }
 
   render() {
-    if (!this.state.scores.length) {
+    if (!Object.keys(this.state.scores).length) {
       return (
         <Table executeTurn={this.click} selectPins={this.selectPins} executeTurn={this.executeTurn} />
       )
@@ -54,6 +54,8 @@ class App extends React.Component {
           <Table executeTurn={this.click} selectPins={this.selectPins} executeTurn={this.executeTurn} />
           <br/>
           <ScoreBoard scores={this.state.scores} frames={this.state.frames} />
+          <br/>
+          Total Score: {this.calculateScore(this.state.scores)}
         </div>
       )
     }

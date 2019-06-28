@@ -1,5 +1,4 @@
 import React from 'react';
-// import Frame from './Frame.jsx';
 
 class ScoreBoard extends React.Component {
   constructor(props) {
@@ -11,13 +10,12 @@ class ScoreBoard extends React.Component {
       <div>
         <h4>Score</h4>
         <br/>
-        {this.props.scores.map((score) => {
-          return 'Frame ' + this.props.frames + ' score: ' + score
+        {Object.keys(this.props.scores).map((key) => {
+          return <span>{'Frame ' + key + ' score: ' + this.props.scores[key]}<br/></span>
         })}
       </div>
     )
   }
-
 }
 
 export default ScoreBoard;
