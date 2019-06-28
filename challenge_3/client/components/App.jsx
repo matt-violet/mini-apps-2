@@ -48,6 +48,16 @@ class App extends React.Component {
       return (
         <Table executeTurn={this.click} selectPins={this.selectPins} executeTurn={this.executeTurn} />
       )
+    } else if (this.state.frame === 10) {
+      return (
+        <div>
+          <ScoreBoard scores={this.state.scores} frames={this.state.frames} />
+          <br/>
+          Total Score: {this.calculateScore(this.state.scores)}
+          <br/><br/>
+          GAME OVER :)
+        </div>
+      )
     } else {
       return (
         <div>
